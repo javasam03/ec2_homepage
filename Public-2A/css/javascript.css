@@ -1,0 +1,113 @@
+.javascript-main {
+    /* width: 1000px; */
+    /* common.css의 main 반응형 너비를 사용하므로 고정 너비 제거 */
+    margin: 30px auto;
+}
+
+.js-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.gallery-card {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+}
+
+.image-box {
+    height: 150px;
+    margin-bottom: 15px;
+
+    background-color: #EAF4FF;
+    border: 2px dashed #2B6CB0;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+}
+
+.js-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.js-table-area, .js-list-area {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #CBD5E0;
+}
+th {
+    background-color: #2B6CB0;
+    color: white;
+}
+td {
+    background-color: #FAFCFF;
+}
+th:nth-child(1), td:nth-child(1) {
+    width: 100px;
+}
+
+.js-list-area ul {
+    padding-left: 20px;
+}
+.js-list-area li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* 태블릿 화면에서는 위쪽 갤러리를 2단, 아래쪽 영역은 2:1 비율 유지 */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .js-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .js-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* 모바일 화면에서는 모든 영역을 1단으로 변경 */
+@media screen and (max-width: 767px) {
+    .js-gallery,
+    .js-content {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card,
+    .js-table-area,
+    .js-list-area {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+        width: 80px;
+    }
+}

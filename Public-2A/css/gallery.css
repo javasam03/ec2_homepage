@@ -1,0 +1,75 @@
+.gallery-main {
+    /* 변경: common.css의 main 반응형 너비를 사용하므로 고정 너비 제거 */
+    /* width: 1000px; */
+    margin: 30px auto;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: #5C4033;
+    margin-bottom: 10px;
+}
+
+.desc {
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #D6BFA8;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.image-box {
+    height: 150px;
+    margin-bottom: 15px;
+
+    background-color: #EAF4FF;
+    border: 2px dashed #2B6CB0;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+}
+
+.gallery-item h3 {
+    margin: 0 0 10px 0;
+    color: #A65F2B;
+    text-align: center;
+}
+
+.gallery-item p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* 태블릿 화면에서는 갤러리를 2단으로 변경 */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 모바일 화면에서는 갤러리를 1단으로 변경 */
+@media screen and (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        padding: 18px;
+    }
+}

@@ -1,0 +1,43 @@
+.index-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+
+    align-content: start;
+}
+
+.index-main section, .index-main article {
+    grid-column: 1 / 2;
+
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #D0D7DE;
+    border-radius: 12px;
+}
+
+.index-main aside {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    padding: 25px;
+    background-color: #FFF7E8;
+    border: 1px solid #D6BFA8;
+    border-radius: 12px;
+}
+
+.index-main h2 {
+    margin-top: 0;
+}
+
+/* 모바일 화면에서는 index-main을 1단으로 변경 */
+@media screen and (max-width: 767px) {
+    .index-main {
+        grid-template-columns: 1fr;
+    }
+
+    .index-main section, .index-main article, .index-main aside {
+        grid-column: auto;
+        grid-row: auto;
+        padding: 20px;
+    }
+}
